@@ -1,0 +1,15 @@
+create procedure product_details123
+(@pname varchar (20),
+ @pcat_id int,
+ @pprice int,
+ @punits int,
+ @pdesp varchar(50),
+ @pid int out)
+ as
+ begin
+ insert into product_order12
+ values(@pname,@pcat_id,@pprice,@punits,@pdesp)
+ set @pid=@@identity;
+ end 
+ exec  product_details123 "avni",9,1900,7,"gj",0
+ select * from product_order12

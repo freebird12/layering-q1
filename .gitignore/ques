@@ -1,0 +1,50 @@
+Business Scenario :
+ABC Hyundai Automobile Dealer needs an Inventory Management System to maintain product details.
+The following are the details of the Product that needs to be maintained,
+Product
+• ProductID ( Auto Generated , Unique)
+• ProductName (Unique)
+• ProductCategoryID (FK - ProductCategoryMaster)
+• UnitPrice
+• TotalNumberAvailable
+• Description
+Product Category Master
+• ProductCategoryID
+• ProductCategoryName(e.g. Hyundai, Maruti, Audi, BMW)
+LoginMaster
+• LoginID
+• UserName
+• Password
+• UserRoleID(1- Admin, 2-User)
+There are two user of this application Admin and GuestUser
+1. Login : Admin and Guest User should be able to login to the system with username and
+password
+Note : Credential for admin is (Username – admin, Password – admin)
+Credential for GuestUser is (Username – test, Password - test)
+2. Add Product : Admin should be able to add product. It will take
+ProductName ,ProductCategory, UnitPrice, TotalNumberAvailable, Description and save
+detail in Product Table.
+After insertion it will show the message to user that “Product inserted successfully and
+product id is #”
+Note : # is auto incremented product id for that product
+product category should be drop down which should be get binded from
+Product Category Master table
+3. View Product(By ProductName, Product Category) : Admin should be able to view all
+products details(Sr.no, ProductName ,ProductCategory, UnitPrice,
+TotalNumberAvailable) by product name or product category.
+Note: If not any filter is provided it will show all data otherwise it will show data as per
+filter on Product Name or Product Category
+4. Remove Product : Admin should be able to remove the product from the product list
+Approach for Solution:
+• Use Layering approach for application.
+• Use proper naming convention and coding standards to develop the application
+• Use Master page, Style Sheet, Header, Footer and Appropriate Menu Control
+• Validation – Product Name, Product Category ID, Unit Price is required field
+Unit Price should be between 1 to 500000
+Description field should accept multi line
+• Use proper state management technique for login.
+If login user is admin he can perform all the functionalities(Add Product, View Product and
+Remove Product)
+If any other user log in to the system with valid credential then Greet Them
+“Welcome User Name”
+If any invalid user tries to login to the system should give the message “Not valid User

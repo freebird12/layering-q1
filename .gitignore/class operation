@@ -1,0 +1,45 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Data.SqlClient;
+using System.Data;
+using Product;
+
+namespace operation
+{
+    public class product_oper
+
+    {
+        public int add_product(product_var obj)
+        {
+            SqlConnection con = new SqlConnection("server=intvmsql01;user id=pj01test01;password=tcstvm;database=DB01TEST01");
+            con.Open();
+
+            SqlCommand cmd = new SqlCommand("product_details123", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@pname", obj.ProductName);
+            cmd.Parameters.AddWithValue("@pcat_id", obj.ProductCategoryId);
+            cmd.Parameters.AddWithValue("@pprice", obj.Price);
+            cmd.Parameters.AddWithValue("@punits", obj.Total);
+            cmd.Parameters.AddWithValue("@pdesp", obj.Description);
+
+            cmd.Parameters.AddWithValue("@pid", 0);
+            cmd.Parameters["@pid"].Direction = ParameterDirection.Output;
+
+            int rowaffected = cmd.ExecuteNonQuery();
+
+            if (rowaffected > 0)
+            {
+                int productid = Convert.ToInt32(cmd.Parameters["@pid"].Value);
+                return productid;
+            }
+            else
+
+                return 0;
+        }
+        
+
+    }
+}

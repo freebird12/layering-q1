@@ -1,0 +1,104 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Product
+{
+    public class product_var
+    {
+        string productName;
+        int productCategoryId;
+        int price;
+        int total;
+        string description;
+
+
+
+        public product_var(string productName, int productCategoryId, int price, int total, string description)
+        {
+            this.productName = productName;
+            this.productCategoryId = productCategoryId;
+            this.price = price;
+            this.total = total;
+            this.description = description;
+        }
+
+
+
+        public string ProductName
+        {
+            get
+            {
+                return productName;
+            }
+
+            set
+            {
+                productName = value;
+            }
+        }
+
+
+
+        public int ProductCategoryId
+        {
+            get
+            {
+                return productCategoryId;
+            }
+
+            set
+            {
+                productCategoryId = value;
+            }
+        }
+
+
+
+        public int Price
+        {
+            get
+            {
+                return price;
+            }
+
+            set
+            {
+                price = value;
+            }
+        }
+
+
+
+        public int Total
+        {
+            get
+            {
+                return total;
+            }
+
+            set
+            {
+                total = value;
+            }
+        }
+
+
+
+
+        public string Description
+        {
+            get
+            {
+                return description;
+            }
+
+            set
+            {
+                description = value;
+            }
+        }
+    }
+}
